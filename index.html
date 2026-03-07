@@ -246,12 +246,17 @@
     .p-card:hover .p-overlay { opacity: 1; }
     .p-card:hover .p-img { transform: scale(1.04); }
     .p-placeholder {
-      width: 100%; height: 240px;
+      width: 100%; height: auto; aspect-ratio: 3/4;
       background: var(--surface);
       display: flex; flex-direction: column; align-items: center; justify-content: center;
       gap: 0.5rem; color: var(--gray); font-size: 0.72rem; letter-spacing: 0.06em;
       text-align: center; padding: 0 1rem;
     }
+    /* Proporción responsiva por categoría */
+    .p-card[data-cat="moda"] .p-placeholder    { aspect-ratio: 3/4; }
+    .p-card[data-cat="hogar"] .p-placeholder   { aspect-ratio: 4/3; }
+    .p-card[data-cat="electro"] .p-placeholder { aspect-ratio: 1/1; }
+    .p-card[data-cat="accesorios"] .p-placeholder { aspect-ratio: 1/1; }
     .p-placeholder svg { opacity: 0.22; margin-bottom: 0.3rem; }
     .p-img {
       width: 100%; height: auto; display: block;
